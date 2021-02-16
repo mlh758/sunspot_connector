@@ -1,6 +1,10 @@
 # SunspotConnector
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sunspot_connector`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ever wanted to override the default HTTP client used in RSolr? I have, and now you can too. If you put
+Solr behind a reverse proxy that supports gzip you'll need additional headers and a better HTTP client
+than the default to allow that. This gem provides hooks to make those changes. It also sets a keep-alive
+header by default which can provide some nice performance improvements if you make a lot of small requests
+and switch to a faraday adapter that supports it.
 
 ## Installation
 
