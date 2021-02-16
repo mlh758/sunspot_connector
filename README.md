@@ -27,7 +27,7 @@ config.solr_connection_overrides = solr_override
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sunspot_connector.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mlh758/sunspot_connector.
 
 
 ## License
