@@ -4,25 +4,22 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
 ```ruby
 gem 'sunspot_connector'
+
+# Optionally add a new faraday adapter
+gem 'em-synchrony', '~> 1.0'
+gem 'em-http-request', '~> 1.0'
 ```
 
-And then execute:
+In your Rails config:
 
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install sunspot_connector
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+solr_override = SunspotConnector::Config.new
+solr_override.headers = { 'Accept-Encoding' => 'gzip,deflate' } # send some extra headers with every request
+solr_override.adapter = :em_synchrony # override the default http connector, any faraday adapter should do
+config.solr_connection_overrides = solr_override
+```
 
 ## Contributing
 
