@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require 'rsolr'
+require 'faraday'
 module SunspotConnector
   class Connection
     def initialize(config = Config.new)

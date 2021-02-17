@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'sunspot_rails', '~> 2.0'
   spec.add_dependency 'faraday', '~> 1.0'
+  spec.add_dependency 'rsolr', '~> 2.0'
 end
